@@ -1,5 +1,5 @@
 $openSSLPath = "c:\OpenSSL-Win64\bin\openssl.exe"
-$pfxPath = "c:\Certs\sp2013dev_ssl.pfx"
+$pfxPath = "c:\Certs\sp2013dev.apps.pfx"
 $pfxPassword = "QazWsx123"
 
 $encryptedKeyName = "spaddin_encrypted.key"
