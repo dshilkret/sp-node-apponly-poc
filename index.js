@@ -3,14 +3,16 @@ var jwt = require('jsonwebtoken');
 var url = require("url");
 var request = require("request");
 
-var siteUrl = "https://sp2013dev/sites/dev";
+
+  //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
+var siteUrl = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com';
 var sharepointhostname = url.parse(siteUrl).hostname;
-var clientid = "ded561d0-05dc-48b8-8c64-9b161392b9e8";
-var realm = "3bf32a1f-9ea9-4adb-8727-aad194f89785" // equals to SharePoint Farm ID
-var issuerid = '9e9e46c4-6329-4990-a0b8-13b87b3ba56a' + "@" + realm;
+var clientid = 'b66f7e77-de3e-45d2-ba4c-b1b6405ec214';
+var realm = 'ddd67120-9259-451c-ad8f-b8cc3b28fac3' // equals to SharePoint Farm ID
+var issuerid = '9e9e46c4-6329-4990-a0b8-13b87b3ba56a'+ "@" + realm;
 var audience = '00000003-0000-0ff1-ce00-000000000000/' + sharepointhostname + '@' + realm;
-var x5t = "v4HGgYynTnuL8gZk368JlFw9FeE";
-var keyFilePath = "spaddin.key";
+var x5t = 'QOCIyWwlxy8bM40Og6yzuj9vYkU';
+var keyFilePath = 'C:\\DocIntegrator\\DIA\\SP OAuth-2016\\OAuth\\HighTrustOAuth.key';
 
 var options = {
   key: fs.readFileSync(keyFilePath)
