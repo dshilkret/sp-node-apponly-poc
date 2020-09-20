@@ -34,7 +34,7 @@ var actortoken = {
   exp: (dateref + 21600).toString(),
   trustedfordelegation: true
 }
-
+//get accessToken
 var accessToken = jwt.sign(actortoken, options.key, { header: rs256 });
 
 request.get({
