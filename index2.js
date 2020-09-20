@@ -3,6 +3,7 @@ var jwt = require('jsonwebtoken');
 var url = require("url");
 var request = require("request");
 
+
 //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
 var siteUrl = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com';
 var sharepointhostname = url.parse(siteUrl).hostname;
@@ -12,7 +13,6 @@ var issuerid = '9e9e46c4-6329-4990-a0b8-13b87b3ba56a'+ "@" + realm;
 var audience = '00000003-0000-0ff1-ce00-000000000000/' + sharepointhostname + '@' + realm;
 var x5t = 'QOCIyWwlxy8bM40Og6yzuj9vYkU';
 var keyFilePath = 'C:\\DocIntegrator\\DIA\\SP OAuth-2016\\OAuth\\HighTrustOAuth.key';
-
 
 var options = {
   key: fs.readFileSync(keyFilePath)
@@ -56,6 +56,6 @@ request.get({
       }
     }
   } else {
-    console.log("error");
+    //console.log("error");
   }
 });
