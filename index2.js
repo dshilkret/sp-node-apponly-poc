@@ -3,12 +3,8 @@ var jwt = require('jsonwebtoken');
 var url = require("url");
 var request = require("request");
 
-<<<<<<< HEAD
 
-  //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
-=======
 //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
->>>>>>> 49aaf8b428eb763acd0d6f6b1ba5a4b7635f65a5
 var siteUrl = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com';
 var sharepointhostname = url.parse(siteUrl).hostname;
 var clientid = 'b66f7e77-de3e-45d2-ba4c-b1b6405ec214';
@@ -38,7 +34,7 @@ var actortoken = {
   exp: (dateref + 21600).toString(),
   trustedfordelegation: true
 }
-//get accessToken
+
 var accessToken = jwt.sign(actortoken, options.key, { header: rs256 });
 
 request.get({
