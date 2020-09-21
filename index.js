@@ -22,7 +22,7 @@ var dateref = parseInt((new Date()).getTime() / 1000);
 
 var rs256 = {
   typ: "JWT",
-  alg: "none",
+  alg: "RS256",
   x5t: x5t
 }
 
@@ -35,8 +35,7 @@ var actortoken = {
   trustedfordelegation: true
 }
 //get accessToken
-var accessToken = jwt.sign(actortoken, options.key);
-//var accessToken = jwt.sign(actortoken, options.key, { header: rs256 });
+var accessToken = jwt.sign(actortoken, options.key, { header: rs256 });
 
 request.get({
   url: `${siteUrl}/_api/web/lists`,
@@ -57,6 +56,6 @@ request.get({
       }
     }
   } else {
-    //console.log("error");
+    console.log("error");
   }
 });
