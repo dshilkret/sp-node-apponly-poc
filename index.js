@@ -12,7 +12,7 @@ var realm = 'ddd67120-9259-451c-ad8f-b8cc3b28fac3' // equals to SharePoint Farm 
 var issuerid = '9e9e46c4-6329-4990-a0b8-13b87b3ba56a'+ "@" + realm;
 var audience = '00000003-0000-0ff1-ce00-000000000000/' + sharepointhostname + '@' + realm;
 var x5t = 'QOCIyWwlxy8bM40Og6yzuj9vYkU';  //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
-var keyFilePath = 'C:\\cert\HighTrustOAuth.key';
+var keyFilePath = 'C:\\cert\\HighTrustOAuth.key';
 
 var options = {
   key: fs.readFileSync(keyFilePath) //Use SN code equiv.
