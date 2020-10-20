@@ -2,7 +2,8 @@ var fs = require('fs');
 var jwt = require('jsonwebtoken');
 var url = require("url");
 var request = require("request");
-
+var base64js = require("base64-js");
+const { Buffer } = require('buffer');
 
 /*
  * base64.js: An extremely simple implementation of base64 encoding / decoding using node.js Buffers
@@ -12,6 +13,24 @@ var request = require("request");
  *
  */
 
+base64js.encode = function(unencoded) {
+  return new Buffer(unencoded || '').toString('base64');
+};
+base64js.decode = function(encoded) {
+  return new Buffer(encoded || '', 'base64').toString('utf8');
+};
+
+base64js.base64.urlEncode = function(unencoded) {
+  var encoded = base64.encode(unencoded);
+  return encoded.replace('+', '-').replace('/', '_').replace(/=+$/, '');
+};
+
+base64js.urlDecode = function(encoded) {
+  encoded = encoded.replace('-', '+').replace('_', '/');
+  while (encoded.length % 4)
+    encoded += '=';
+  return base64.decode(encoded);
+};
 var base64 = exports;
 
 base64.encode = function(unencoded) {
@@ -52,7 +71,7 @@ var issueridout = '57df0fe0-f569-4118-be1e-17cc8faa8c87' + "@" + realm;
 var issuerid = '9e9e46c4-6329-4990-a0b8-13b87b3ba56a' + "@" + realm;
 var audience = '00000003-0000-0ff1-ce00-000000000000/' + sharepointhostname + '@' + realm;
 var x5t = 'QOCIyWwlxy8bM40Og6yzuj9vYkU';  //shaThumbprint: 'QOCIyWwlxy8bM40Og6yzuj9vYkU'
-var keyFilePath = 'HighTrustOAuth.key';
+var keyFilePath = 'C:\\cert\\HighTrustOAuth.key';
 
   /**
          *  Out Token JWT Json sapmle。
