@@ -52,7 +52,6 @@ base64.urlDecode = function(encoded) {
     encoded += '=';
   return base64.decode(encoded);
 };
-<<<<<<< Updated upstream
 //SP-2013
 // var siteUrl = 'https://spg4sc7skkehdns.eastus2.cloudapp.azure.com';
 // var sharepointhostname = 'spg4sc7skkehdns.eastus2.cloudapp.azure.com';
@@ -66,11 +65,6 @@ base64.urlDecode = function(encoded) {
 //SP-2016
 var siteUrl = 'https://docintsp2016.discovertechnologies.com';//'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com';
 var sharepointhostname = 'docintsp2016.discovertechnologies.com';   //url.parse(siteUrl).hostname;
-=======
-
-var siteUrl = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com';
-var sharepointhostname = url.parse(siteUrl).hostname;
->>>>>>> Stashed changes
 var clientid = 'b66f7e77-de3e-45d2-ba4c-b1b6405ec214';
 var realm = 'ddd67120-9259-451c-ad8f-b8cc3b28fac3' // equals to SharePoint Farm ID
 var issueridout = '57df0fe0-f569-4118-be1e-17cc8faa8c87' + "@" + realm;
@@ -112,7 +106,6 @@ var actortoken = {
 }
 //get accessToken
 var accessToken = jwt.sign(actortoken, options.key, { header: rs256 });
-<<<<<<< Updated upstream
 var outerHead = base64.urlEncode('{"typ":"JWT", "alg":"none"}');
 //87d59c0e-6a2b-408b-9a6c-1f48392d303c@f094a07e-5375-4b96-a81c-f651a25f5788 nameid from inner token
 //9e9e46c4-6329-4990-a0b8-13b87b3ba56a@f094a07e-5375-4b96-a81c-f651a25f5788 issuerid from inner token
@@ -137,12 +130,6 @@ var outerTokenEnc = outerHead + '.' + base64.urlEncode(JSON.stringify(outerBody)
 console.log("outerTokenEnc: ");
 console.log(outerTokenEnc);
 
-=======
-var outerHead = base64_js.urlEncode('{"typ":"JWT", "alg":"none"}');
-var outerBodyPre = {"iss":"9e9e46c4-6329-4990-a0b8-13b87b3ba56a@f094a07e-5375-4b96-a81c-f651a25f5788","nameid":"s-1-5-21-2127521184-1604012920-1887927527-2963467", "nii":"urn:office:idp:activedirectory","nbf":"1403212820", "exp":"1633881331","actortoken":accessToken};
-var outerBody = base64_js.urlEncode(JSON.stringify(outerBodyPre));
- var outerToken = outerHead + '.' + outerBody;
->>>>>>> Stashed changes
 request.get({
   url: `${siteUrl}/_api/web/lists`,
   rejectUnauthorized: false,
