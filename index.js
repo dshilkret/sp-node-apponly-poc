@@ -108,7 +108,7 @@ console.log(JSON.stringify(outerBodyPre) + typeof(outerBodyPre));
 var outerBody = outerBodyPre;
 var outerToken = outerHead + '.' + outerBody + '.';
 var outerTokenEnc = outerHead + '.' + base64.urlEncode(JSON.stringify(outerBody)) + '.';
-console.log("outerTokenEnc: ");
+console.log("outerTokenEnc:");
 console.log(outerTokenEnc);
 
 request.get({
