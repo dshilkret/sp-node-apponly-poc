@@ -24,5 +24,8 @@
   "devDependencies": {
     "jsonwebtoken": "^7.1.9",
     "request": "^2.75.0"
+  },
+  "dependencies": {
+    "base64-js": "^1.3.1"
   }
 }
