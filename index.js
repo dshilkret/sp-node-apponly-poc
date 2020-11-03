@@ -109,7 +109,7 @@ var outerBody = outerBodyPre;
 var outerToken = outerHead + '.' + outerBody + '.';
 var outerTokenEnc = outerHead + '.' + base64.urlEncode(JSON.stringify(outerBody)) + '.';
 console.log("outerTokenEnc: " + outerTokenEnc);
-
+//test
 request.get({
   url: `${siteUrl}/_api/web/lists`,
   rejectUnauthorized: false,
